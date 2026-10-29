@@ -2,35 +2,31 @@ CyberSecurity-ResearchAI
 
 AI-Assisted Vulnerability Research and Risk Analysis
 
-A Python-based cybersecurity research dashboard for exploring CVEs, analyzing vulnerability severity, reviewing risk indicators, and understanding remediation options through an interactive interface.
-
-Repository
+A Python-based cybersecurity research dashboard for exploring CVEs, analyzing vulnerability severity, reviewing risk indicators, and examining remediation options.
 
 Overview
 
-CyberSecurity-ResearchAI brings vulnerability research and security analysis together in a Streamlit dashboard. It combines structured vulnerability data, analytical tools, and AI-assisted explanations to support a clearer understanding of potential security risks.
+CyberSecurity-ResearchAI combines vulnerability data, analytical tools, and AI-assisted insights in an interactive Streamlit dashboard.
 
-The project focuses on making CVE research more accessible through data visualization, vulnerability details, and exportable research results.
+Features
 
-Key Features
+CVE Research — Explore vulnerability records from configured data sources.
 
-CVE Research: Retrieve and explore vulnerability records from configured data sources.
+Severity Analysis — Review severity classifications and vulnerability distributions.
 
-Severity Analysis: Review severity classifications and vulnerability distributions.
+CVSS Analysis — Examine available scores and identify higher-risk vulnerabilities.
 
-CVSS Assessment: Analyze available CVSS scores and identify higher-risk vulnerabilities.
+Known Exploited Vulnerabilities — Review available exploitation metadata.
 
-Exploitation Indicators: Examine known-exploited vulnerability metadata when available.
+AI-Assisted Analysis — Explore vulnerability explanations using the configured language-model integration.
 
-AI-Assisted Insights: Generate additional explanations through the configured language-model integration.
+Remediation Insights — Review potential mitigation approaches.
 
-Remediation Guidance: Review potential mitigation and remediation considerations.
+Interactive Dashboard — Explore metrics, charts, filters, and vulnerability details.
 
-Interactive Dashboard: Explore metrics, charts, filters, and individual vulnerability details.
+Data Export — Export research results in CSV and JSON formats.
 
-Data Export: Download supported research results in CSV and JSON formats.
-
-Diagnostics: Inspect application errors to help troubleshoot issues.
+Diagnostics — Inspect application errors for troubleshooting.
 
 Technology Stack
 
@@ -48,17 +44,17 @@ Interactive dashboard
 
 Pandas
 
-Data processing and analysis
+Data analysis
 
 SQLite
 
-Local data storage
+Local database
 
 NVD CVE API
 
 Vulnerability information
 
-CISA KEV data
+CISA KEV
 
 Known-exploited vulnerability metadata
 
@@ -83,17 +79,7 @@ CyberSecurity-ResearchAI/
 ├── requirements.txt
 └── README.md
 
-Getting Started
-
-Prerequisites
-
-Python 3.11 or a compatible version
-
-pip
-
-Git
-
-API credentials if required by the configured language-model provider
+Installation
 
 1. Clone the Repository
 
@@ -110,59 +96,51 @@ Windows PowerShell
 
 .\venv\Scripts\Activate.ps1
 
-Windows Command Prompt
-
-venv\Scripts\activate.bat
-
 4. Install Dependencies
 
 python -m pip install -r requirements.txt
 
 5. Configure Credentials
 
-Configure any required API credentials according to the project's implementation. Store secrets in environment variables or an appropriate local secrets file.
+Configure any required API credentials according to the project's implementation. Never commit API keys, passwords, or private credentials to GitHub.
 
-Never commit API keys, passwords, or private credentials to the repository.
-
-6. Launch the Dashboard
+6. Run the Dashboard
 
 streamlit run app.py
 
-Open the local URL displayed in the terminal to access the application.
+Open the local URL displayed in your terminal.
 
-Research Workflow
+Workflow
 
 Enter a vulnerability research query.
 
-Retrieve relevant CVE information from configured data sources.
+Retrieve relevant CVE information.
 
-Examine vulnerability details, severity classifications, and available CVSS scores.
+Review severity, CVSS scores, and available exploitation metadata.
 
-Review available exploitation indicators and AI-assisted analysis.
+Examine AI-assisted analysis when configured.
 
-Explore remediation considerations.
+Review remediation considerations.
 
-Export research results for further review.
+Export results for further analysis.
 
-The availability and completeness of results depend on the configured data sources and external service access.
+Security Notice
 
-Security Considerations
-
-Verify vulnerability information against authoritative sources.
-
-Treat AI-generated explanations as supporting analysis, not definitive security advice.
-
-Review remediation recommendations before applying them to production systems.
-
-Keep API credentials and sensitive local data out of version control.
+Verify vulnerability information and remediation recommendations against authoritative sources. AI-generated output may be incomplete or inaccurate. Keep credentials and sensitive local data out of version control.
 
 Future Scope
 
-Potential improvements include enhanced vulnerability filtering, additional threat-intelligence sources, richer reporting, and expanded risk-prioritization capabilities.
+Enhanced vulnerability filtering
+
+Additional threat-intelligence integrations
+
+Improved reporting and visualization
+
+Expanded risk-prioritization capabilities
 
 Disclaimer
 
-This project is intended for educational, research, and defensive cybersecurity purposes. Vulnerability information may change over time, and AI-generated output may be incomplete or inaccurate. Validate findings against authoritative sources before making security decisions.
+This project is intended for educational, research, and defensive cybersecurity purposes. Findings should be validated before being used for operational security decisions.
 
 Author
 
@@ -170,4 +148,4 @@ Anshii360
 
 GitHub Profile
 
-Built to support more accessible cybersecurity research and vulnerability analysis.
+Cybersecurity research through data analysis and AI-assisted insights.
