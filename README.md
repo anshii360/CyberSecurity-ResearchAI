@@ -1,87 +1,38 @@
-🛡️ CyberSecurity-ResearchAI
+CyberSecurity-ResearchAI
 
-AI-Powered Vulnerability Research & Risk Analysis Dashboard
+AI-Assisted Vulnerability Research and Risk Analysis
 
-<p align="center">
+A Python-based cybersecurity research dashboard for exploring CVEs, analyzing vulnerability severity, reviewing risk indicators, and understanding remediation options through an interactive interface.
 
-Explore CVEs. Analyze Risks. Understand Vulnerabilities.
+Repository
 
-</p>
+Overview
 
-<p align="center">
+CyberSecurity-ResearchAI brings vulnerability research and security analysis together in a Streamlit dashboard. It combines structured vulnerability data, analytical tools, and AI-assisted explanations to support a clearer understanding of potential security risks.
 
+The project focuses on making CVE research more accessible through data visualization, vulnerability details, and exportable research results.
 
+Key Features
 
+CVE Research: Retrieve and explore vulnerability records from configured data sources.
 
+Severity Analysis: Review severity classifications and vulnerability distributions.
 
+CVSS Assessment: Analyze available CVSS scores and identify higher-risk vulnerabilities.
 
-</p>
+Exploitation Indicators: Examine known-exploited vulnerability metadata when available.
 
-📌 Overview
+AI-Assisted Insights: Generate additional explanations through the configured language-model integration.
 
-CyberSecurity-ResearchAI is an AI-assisted cybersecurity research project designed to simplify vulnerability research, CVE analysis, and risk assessment through an interactive dashboard.
+Remediation Guidance: Review potential mitigation and remediation considerations.
 
-The application combines vulnerability intelligence, analytical tools, and AI-assisted explanations to help users explore security vulnerabilities, understand their severity, and review potential remediation approaches.
+Interactive Dashboard: Explore metrics, charts, filters, and individual vulnerability details.
 
-Built with Python and Streamlit, the project provides a centralized interface for exploring vulnerability data and generating research insights.
+Data Export: Download supported research results in CSV and JSON formats.
 
-✨ Key Features
+Diagnostics: Inspect application errors to help troubleshoot issues.
 
-🔎 CVE Research
-
-Search and explore Common Vulnerabilities and Exposures (CVEs).
-
-Retrieve vulnerability information from configured data sources.
-
-Review individual vulnerability details.
-
-📊 Vulnerability Analytics
-
-Analyze vulnerability severity distributions.
-
-Explore CVSS scores and risk levels.
-
-Identify high-risk vulnerabilities.
-
-Visualize research results through dashboard charts and metrics.
-
-🤖 AI-Assisted Security Analysis
-
-Generate explanations of vulnerability details.
-
-Support understanding of potential causes and security impact.
-
-Review AI-assisted technical analysis and remediation insights.
-
-🚨 Known Exploited Vulnerability Analysis
-
-Examine known-exploited vulnerability metadata when available.
-
-Support vulnerability prioritization using available exploitation indicators.
-
-🛠️ Remediation Insights
-
-Review suggested approaches for addressing vulnerabilities.
-
-Understand potential mitigation and remediation considerations.
-
-📁 Data Export
-
-Export research results in CSV format.
-
-Download structured results in JSON format.
-
-🖥️ Interactive Dashboard
-
-Explore vulnerability records and analytical summaries.
-
-Filter research results by severity.
-
-Review detailed vulnerability information.
-
-Access application diagnostics for troubleshooting.
-
-🧰 Tech Stack
+Technology Stack
 
 Technology
 
@@ -89,7 +40,7 @@ Purpose
 
 Python
 
-Core application logic
+Application logic
 
 Streamlit
 
@@ -105,52 +56,19 @@ Local data storage
 
 NVD CVE API
 
-Vulnerability data source
+Vulnerability information
 
 CISA KEV data
 
-Known-exploited vulnerability intelligence
+Known-exploited vulnerability metadata
 
-Configured LLM provider
+Language-model integration
 
 AI-assisted analysis
 
-Git & GitHub
-
-Version control and project hosting
-
-🏗️ Project Architecture
-
-The application is organized into separate Python modules to keep data retrieval, analysis, reporting, and dashboard functionality manageable.
-
-app.py — Streamlit dashboard and user interface.
-
-agent.py — Agent-related functionality.
-
-analysis.py — Vulnerability analysis and risk metrics.
-
-cisa.py — CISA-related vulnerability data handling.
-
-data.py — Data retrieval and processing.
-
-database.py — Database operations.
-
-llm.py — Language-model integration.
-
-manager.py — Research workflow management.
-
-query_parser.py — Research query parsing.
-
-report.py — Report generation.
-
-tools.py — Supporting utilities and tools.
-
-requirements.txt — Python dependencies.
-
-📂 Project Structure
+Project Structure
 
 CyberSecurity-ResearchAI/
-│
 ├── app.py
 ├── agent.py
 ├── analysis.py
@@ -165,23 +83,28 @@ CyberSecurity-ResearchAI/
 ├── requirements.txt
 └── README.md
 
-⚙️ Installation & Setup
+Getting Started
 
-Follow these steps to run the project locally.
+Prerequisites
+
+Python 3.11 or a compatible version
+
+pip
+
+Git
+
+API credentials if required by the configured language-model provider
 
 1. Clone the Repository
 
 git clone https://github.com/anshii360/CyberSecurity-ResearchAI.git
-
-2. Navigate to the Project Directory
-
 cd CyberSecurity-ResearchAI
 
-3. Create a Virtual Environment
+2. Create a Virtual Environment
 
 python -m venv venv
 
-4. Activate the Virtual Environment
+3. Activate the Environment
 
 Windows PowerShell
 
@@ -191,102 +114,60 @@ Windows Command Prompt
 
 venv\Scripts\activate.bat
 
-5. Install Dependencies
+4. Install Dependencies
 
 python -m pip install -r requirements.txt
 
-6. Configure API Credentials
+5. Configure Credentials
 
-If your configured language-model provider requires an API key, configure it according to the settings expected by the project.
+Configure any required API credentials according to the project's implementation. Store secrets in environment variables or an appropriate local secrets file.
 
-Store credentials in environment variables or an appropriate secrets file.
+Never commit API keys, passwords, or private credentials to the repository.
 
-Never commit API keys, passwords, or other secrets to GitHub.
-
-Check the relevant configuration in llm.py before launching the application.
-
-7. Launch the Dashboard
+6. Launch the Dashboard
 
 streamlit run app.py
 
-Open the local URL shown in your terminal to access the dashboard.
+Open the local URL displayed in the terminal to access the application.
 
-🔄 How It Works
+Research Workflow
 
-Enter a research query to begin exploring relevant vulnerabilities.
+Enter a vulnerability research query.
 
-Retrieve vulnerability data from the configured sources.
+Retrieve relevant CVE information from configured data sources.
 
-Analyze security information, including severity and CVSS scores when available.
+Examine vulnerability details, severity classifications, and available CVSS scores.
 
-Review vulnerability details and relevant exploitation metadata.
+Review available exploitation indicators and AI-assisted analysis.
 
-Explore AI-assisted insights when the language-model integration is configured and available.
+Explore remediation considerations.
 
-Review remediation guidance to support further investigation.
+Export research results for further review.
 
-Export results in CSV or JSON format for additional analysis.
+The availability and completeness of results depend on the configured data sources and external service access.
 
-🎯 Project Objectives
+Security Considerations
 
-Simplify cybersecurity vulnerability research.
+Verify vulnerability information against authoritative sources.
 
-Improve visibility into CVE severity and risk indicators.
+Treat AI-generated explanations as supporting analysis, not definitive security advice.
 
-Support risk-based vulnerability prioritization.
+Review remediation recommendations before applying them to production systems.
 
-Make technical security information easier to explore.
+Keep API credentials and sensitive local data out of version control.
 
-Combine structured vulnerability data with AI-assisted analysis.
+Future Scope
 
-Present research findings through an interactive dashboard.
+Potential improvements include enhanced vulnerability filtering, additional threat-intelligence sources, richer reporting, and expanded risk-prioritization capabilities.
 
-🔐 Security & Reliability
+Disclaimer
 
-Keep API credentials outside source control.
+This project is intended for educational, research, and defensive cybersecurity purposes. Vulnerability information may change over time, and AI-generated output may be incomplete or inaccurate. Validate findings against authoritative sources before making security decisions.
 
-Validate vulnerability details against authoritative sources.
-
-Treat AI-generated explanations as assistance rather than definitive security advice.
-
-Review application errors and data-source availability when troubleshooting.
-
-Use current vulnerability intelligence when making remediation decisions.
-
-🚀 Future Improvements
-
-Potential future enhancements include:
-
-Advanced vulnerability search and filtering.
-
-Improved risk-prioritization workflows.
-
-Additional threat-intelligence integrations.
-
-Enhanced reporting and visualization.
-
-More detailed vulnerability trend analysis.
-
-Automated monitoring of newly published vulnerabilities.
-
-⚠️ Disclaimer
-
-This project is intended for educational, research, and defensive cybersecurity purposes.
-
-AI-generated explanations and remediation recommendations may be incomplete or inaccurate. Vulnerability data and severity assessments should be verified using authoritative sources before being used for operational security decisions.
-
-👩‍💻 Author
+Author
 
 Anshii360
 
-GitHub: @anshii360
+GitHub Profile
 
-⭐ Show Your Support
-
-If you find this project useful, consider giving the repository a ⭐ on GitHub.
-
-<p align="center">
-
-Built with Python, Streamlit, and a passion for cybersecurity.
-
-</p>
+Built to support more accessible cybersecurity research and vulnerability analysis.
