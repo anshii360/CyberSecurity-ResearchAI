@@ -1,368 +1,138 @@
-# CyberSecurity-ResearchAI
-
-**CyberSecurity-ResearchAI** is an **Agentic AI-powered cybersecurity research and intelligence system** that autonomously collects, analyzes, and summarizes publicly available cybersecurity information to generate structured intelligence reports.
-
-## Overview
-
-Cybersecurity research often requires collecting information from multiple sources such as vulnerability databases, security advisories, and threat intelligence platforms.
-
-CyberSecurity-ResearchAI uses **Agentic AI** to automate this workflow.
-
-The system understands a user's research query, identifies the information required, uses appropriate tools to collect data, analyzes the collected information, and generates a source-backed cybersecurity intelligence report.
-
-## Problem Statement
-
-Manual cybersecurity research can involve:
-
-* Searching multiple sources
-* Collecting large amounts of information
-* Identifying relevant vulnerabilities
-* Comparing severity and affected technologies
-* Analyzing recent trends
-* Preparing research reports
-
-This process can be time-consuming and repetitive.
-
-**CyberSecurity-ResearchAI aims to automate these tasks using an agent-based AI workflow.**
-
-## Objectives
-
-* Automate cybersecurity research
-* Collect information from public cybersecurity sources
-* Analyze vulnerabilities and security information
-* Identify relevant patterns and trends
-* Generate structured intelligence reports
-* Provide source references for findings
-* Reduce repetitive manual research work
-
-## How It Works
-
-```text
-                    User Query
-                        │
-                        ▼
-                 ┌──────────────┐
-                 │ Manager Agent │
-                 └──────┬───────┘
-                        │
-                        ▼
-                 ┌──────────────┐
-                 │Research Agent│
-                 └──────┬───────┘
-                        │
-              ┌─────────┼─────────┐
-              ▼         ▼         ▼
-            NVD API   Web Search  Advisories
-              │         │         │
-              └─────────┼─────────┘
-                        ▼
-                  Collected Data
-                        │
-                        ▼
-                 ┌──────────────┐
-                 │Analysis Agent│
-                 └──────┬───────┘
-                        │
-                        ▼
-                Findings & Trends
-                        │
-                        ▼
-                 ┌──────────────┐
-                 │ Report Agent │
-                 └──────┬───────┘
-                        │
-                        ▼
-             Intelligence Report
-```
+🛡️ CyberSecurity-ResearchAI
 
-## Agentic AI Workflow
+An AI-powered cybersecurity research tool for CVE analysis, vulnerability risk assessment, severity classification, and remediation insights.
 
-Unlike a traditional web scraper that follows a fixed sequence, the system is designed around an agentic workflow.
+📌 Overview
 
-```text
-Traditional Scraper
+CyberSecurity-ResearchAI is a Python-based cybersecurity research dashboard designed to help users explore Common Vulnerabilities and Exposures (CVEs), assess vulnerability severity, and understand potential security risks.
 
-Website → Scrape → Store Data
-```
+The project combines vulnerability data retrieval, analytical tools, and AI-assisted insights in a Streamlit dashboard.
 
-```text
-CyberSecurity-ResearchAI
+✨ Features
 
-User Goal
-   ↓
-Understand the task
-   ↓
-Decide what information is required
-   ↓
-Select appropriate tools
-   ↓
-Collect information
-   ↓
-Analyze information
-   ↓
-Generate findings
-   ↓
-Create report
-```
+CVE Research: Retrieve and explore vulnerability information.
 
-This allows the system to perform multi-step research rather than simply extracting webpage content.
+Severity Analysis: Classify vulnerabilities by Critical, High, Medium, and Low severity.
 
-## Agents
+CVSS Scoring: Analyze CVSS scores and identify high-risk vulnerabilities.
 
-### 1. Manager Agent
+Known Exploited Vulnerabilities: Display available known-exploited vulnerability metadata.
 
-The Manager Agent coordinates the research workflow.
+AI-Assisted Analysis: Generate explanations of vulnerability causes, impact, and severity.
 
-Responsibilities:
+Remediation Insights: Provide guidance for understanding and addressing security risks.
 
-* Understand the user's objective
-* Break the task into smaller steps
-* Coordinate other agents
-* Decide when the research is sufficient
+Interactive Dashboard: Explore vulnerability metrics, charts, and individual CVE details.
 
-### 2. Research Agent
+Data Export: Export research results in CSV and JSON formats.
 
-The Research Agent collects relevant cybersecurity information.
+Diagnostics: Review application errors and troubleshooting information.
 
-Responsibilities:
+🧰 Tech Stack
 
-* Search public cybersecurity sources
-* Retrieve vulnerability information
-* Extract relevant details
-* Filter information according to the research query
+Language: Python
 
-### 3. Analysis Agent
+Dashboard: Streamlit
 
-The Analysis Agent processes and interprets collected information.
+Data Analysis: Pandas
 
-It can analyze:
+Vulnerability Intelligence: NVD CVE API
 
-* CVE identifiers
-* CVSS scores
-* Severity levels
-* Affected products
-* Vulnerability types
-* Publication dates
-* Recent trends
+Security Data: CISA Known Exploited Vulnerabilities metadata
 
-### 4. Report Agent
+AI Integration: Configured language-model integration
 
-The Report Agent converts the research and analysis into a structured report.
+Database: SQLite
 
-A report can contain:
+Data Visualization: Streamlit charts
 
-* Executive Summary
-* Key Findings
-* Important Vulnerabilities
-* Severity Analysis
-* Affected Technologies
-* Observed Trends
-* Source References
+📂 Project Structure
 
-## Data Sources
-
-The system is designed to work with **publicly available cybersecurity information**.
-
-Potential sources include:
-
-* National Vulnerability Database (NVD)
-* CVE information
-* CISA Known Exploited Vulnerabilities (KEV)
-* Public security advisories
-* Official vendor security advisories
-
-The project does **not require confidential or private cybersecurity data**.
-
-## Example Query
-
-A user could enter:
-
-```text
-Find recent high-severity vulnerabilities affecting web technologies.
-```
-
-The system can then:
-
-```text
-1. Understand the research requirement
-2. Identify relevant sources
-3. Collect vulnerability information
-4. Filter relevant results
-5. Analyze severity and affected technologies
-6. Identify important findings
-7. Generate an intelligence report
-8. Provide source references
-```
-
-## Example Output
-
-```text
-CYBERSECURITY INTELLIGENCE REPORT
-
-Research Query:
-Recent high-severity vulnerabilities affecting web technologies
-
-Summary:
-Several high-severity vulnerabilities were identified
-from the collected public cybersecurity sources.
-
-Key Findings:
-• High-severity vulnerabilities detected
-• Multiple affected technologies identified
-• Recent vulnerabilities require further monitoring
-
-Severity Analysis:
-Critical: X
-High: X
-Medium: X
-
-Affected Technologies:
-• Technology A
-• Technology B
-• Technology C
-
-Sources:
-• NVD
-• CISA KEV
-• Official Security Advisories
-```
-
-## Technology Stack
-
-### Core
-
-* Python
-* Agentic AI
-* Large Language Models (LLMs)
-* REST APIs
-
-### AI
-
-* LLM API
-* Tool Calling
-* Prompt Engineering
-* Multi-Agent Workflow
-
-### Data Collection
-
-* NVD API
-* Web Search
-* Web Scraping
-* `requests`
-* BeautifulSoup / Playwright
-
-### Data Analysis
-
-* Pandas
-* Python
-
-### Database
-
-* SQLite / PostgreSQL
-
-### Frontend
-
-* Streamlit
-
-### Development
-
-* Git
-* GitHub
-
-## Project Structure
-
-```text
 CyberSecurity-ResearchAI/
-│
 ├── app.py
 ├── agent.py
-├── tools.py
-├── data.py
 ├── analysis.py
-├── report.py
+├── cisa.py
+├── data.py
 ├── database.py
-│
+├── llm.py
+├── manager.py
+├── query_parser.py
+├── report.py
+├── tools.py
 ├── requirements.txt
-├── .env
-├── .gitignore
 └── README.md
-```
 
-## Installation
+⚙️ Installation and Setup
 
-### 1. Clone the Repository
+1. Clone the repository
 
-```bash
-git clone YOUR_REPOSITORY_URL
+git clone https://github.com/anshii360/CyberSecurity-ResearchAI.git
+
+2. Navigate to the project directory
+
 cd CyberSecurity-ResearchAI
-```
 
-### 2. Create a Virtual Environment
+3. Create a virtual environment
 
-```bash
 python -m venv venv
-```
 
-### 3. Activate the Virtual Environment
+4. Activate the environment
 
-For Windows:
+Windows PowerShell:
 
-```bash
-venv\Scripts\activate
-```
+.\venv\Scripts\Activate.ps1
 
-### 4. Install Dependencies
+Windows Command Prompt:
 
-```bash
-pip install -r requirements.txt
-```
+venv\Scripts\activate.bat
 
-### 5. Configure Environment Variables
+5. Install dependencies
 
-Create a `.env` file:
+python -m pip install -r requirements.txt
 
-```text
-OPENAI_API_KEY=your_api_key
-```
+6. Configure API credentials
 
-Add other required API credentials as needed.
+If your configured AI provider requires an API key, set it according to the configuration expected by llm.py. Keep API keys in environment variables or an appropriate secrets file; never commit them to GitHub.
 
-### 6. Run the Application
+7. Run the application
 
-```bash
 streamlit run app.py
-```
 
-## Security & Privacy
+Open the local URL displayed in your terminal to access the dashboard.
 
-* The system works with publicly available cybersecurity information.
-* API keys are stored using environment variables.
-* Sensitive credentials should never be committed to GitHub.
-* `.env` is excluded using `.gitignore`.
-* The system does not require access to private organizational systems.
+🔍 How It Works
 
-## Future Scope
+Enter a vulnerability research query.
 
-* Real-time cybersecurity monitoring
-* Additional threat intelligence sources
-* Automated vulnerability alerts
-* Email and notification integration
-* Advanced trend analysis
-* Long-term research memory
-* More specialized AI agents
-* Improved source verification
-* Cloud deployment
-* Interactive cybersecurity dashboards
+Retrieve relevant CVE information from the configured data sources.
 
-## Disclaimer
+Explore severity classifications, CVSS scores, and available exploitation metadata.
 
-CyberSecurity-ResearchAI is intended for **educational, research, and cybersecurity intelligence purposes** using publicly available information.
+Review AI-assisted explanations and remediation insights when the AI service is configured.
 
-The project does not perform unauthorized access, exploitation, or security testing of private systems.
+Export the research results for further analysis.
 
-## Project Information
+🎯 Project Goals
 
-**Project Name:** CyberSecurity-ResearchAI
-**Domain:** Agentic AI
-**Application:** Cybersecurity Research & Intelligence
-**Approach:** Multi-Agent AI Workflow
+Make vulnerability research easier to explore.
+
+Support risk-based prioritization of security issues.
+
+Improve understanding of CVE severity and potential impact.
+
+Present security research findings through an interactive dashboard.
+
+⚠️ Disclaimer
+
+This project is intended for educational, research, and defensive cybersecurity purposes. Vulnerability severity scores and AI-generated explanations should be validated against authoritative sources before making security decisions. AI-generated recommendations may be incomplete or inaccurate.
+
+👩‍💻 Author
+
+Anshii360
+
+GitHub: @anshii360
+
+⭐ Support
+
+If you find this project useful, consider giving the repository a star on GitHub.
